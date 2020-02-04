@@ -1,3 +1,100 @@
+#home {
+  text-align: center;
+}
+#home h1.title {
+  color: #6804da;
+  border: 4px solid #6804da;
+  border-radius: 0em 1em 0em 0em;
+  letter-spacing: -0.065em;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.25em 1em;
+}
+#home .subtitle {
+  text-transform: lowercase;
+  color: #696969;
+}
+#home .search-field {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5em;
+  margin-top: 100px;
+}
+#home .search-field input[type=search] {
+  width: 100%;
+  background: none;
+  padding: 1em 0.75em 1em 1.5em;
+}
+#home .search-field > button {
+  background: #fff;
+  border: none;
+  border-radius: 5em;
+  height: 5em;
+  padding: 1em 4em;
+  position: relative;
+  left: -0.5em;
+  top: 0.35em;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+}
+#home .search-field > button:active {
+  background: #f3f3f3;
+}
+#home .credit {
+  margin-top: 100px;
+  letter-spacing: -0.05em;
+}
+#home .credit > a {
+  font-weight: 700;
+  font-size: 1.5em;
+  letter-spacing: -0.07em;
+}
 
+.App {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.container {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+input[type=search] {
+  background: #e3e3e3;
+  border: none;
+  border-radius: 5em;
+  font-size: 1.25em;
+  outline: none;
+  position: relative;
+  top: -0.02em;
+}
+input[type=search], input[type=search]::placeholder {
+  letter-spacing: -0.045em;
+}
+input[type=search]::placeholder {
+  font-family: "DM Sans", sans-serif;
+}
+
+button {
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=App.css.map */

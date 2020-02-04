@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <path id="bag-a" d="M0,0.0686750778 L11.9393946,0 L12,3 L0,3 L0,0.0686750778 Z M0,6.04578339 L11.9393946,6 L12,8 L0,8 L0,6.04578339 Z"/>
+    <path id="bag-c" d="M13,8 L3,8 L2,8 L2,16 L14,16 L14,8 L13,8 Z M3,6 L3,5 C3,2.23857625 5.23857625,4.4408921e-16 8,0 C10.7614237,-5.55111512e-16 13,2.23857625 13,5 L13,6 L14,6 C15.1045695,6 16,6.8954305 16,8 L16,20 C16,21.1045695 15.1045695,22 14,22 L2,22 C0.8954305,22 0,21.1045695 0,20 L0,8 C0,6.8954305 0.8954305,6 2,6 L3,6 Z M14,18 L2,18 L2,20 L14,20 L14,18 Z M5,6 L11,6 L11,5 C11,3.34314575 9.65685425,2 8,2 C6.34314575,2 5,3.34314575 5,5 L5,6 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(4 1)">
+    <g transform="translate(2 13)">
+      <mask id="bag-b" fill="#fff">
+        <use xlink:href="#bag-a"/>
+      </mask>
+      <use fill="#D8D8D8" xlink:href="#bag-a"/>
+      <g fill="#FFA0A0" mask="url(#bag-b)">
+        <rect width="24" height="24" transform="translate(-6 -14)"/>
+      </g>
+    </g>
+    <mask id="bag-d" fill="#fff">
+      <use xlink:href="#bag-c"/>
+    </mask>
+    <use fill="#000" fill-rule="nonzero" xlink:href="#bag-c"/>
+    <g fill="#7600FF" mask="url(#bag-d)">
+      <rect width="24" height="24" transform="translate(-4 -1)"/>
+    </g>
+  </g>
+</svg>

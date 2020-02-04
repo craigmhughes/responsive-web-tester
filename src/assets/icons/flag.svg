@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <path id="flag-a" d="M11.7216797,0 L15.2727051,0 L11.3769531,5 L15.2727051,11 L12,11 L8,5 L11.7216797,0 Z M0,0 L3,0 L3,11 L0,11 L0,0 Z"/>
+    <path id="flag-c" d="M1,0 L17,0 C17.8931591,0 18.3382981,1.08180103 17.7037956,1.71040251 L14.229298,6.15258654 L17.7652689,11.3562893 C18.312418,12.0067618 17.8499921,13 17,13 L2,13 L2,20 C2,20.5522847 1.55228475,21 1,21 C0.44771525,21 0,20.5522847 0,20 L0,1 C0,0.44771525 0.44771525,0 1,0 Z M2,2 L2,11 L14.8521135,11 L12.1054185,6.73461983 C11.7701986,6.33609709 11.7969414,5.74701638 12.1668918,5.38050658 L14.5697454,2 L2,2 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(3 2)">
+    <g transform="translate(1 1)">
+      <mask id="flag-b" fill="#fff">
+        <use xlink:href="#flag-a"/>
+      </mask>
+      <use fill="#D8D8D8" xlink:href="#flag-a"/>
+      <g fill="#FFA0A0" mask="url(#flag-b)">
+        <rect width="24" height="24" transform="translate(-4 -3)"/>
+      </g>
+    </g>
+    <mask id="flag-d" fill="#fff">
+      <use xlink:href="#flag-c"/>
+    </mask>
+    <use fill="#000" fill-rule="nonzero" xlink:href="#flag-c"/>
+    <g fill="#7600FF" mask="url(#flag-d)">
+      <rect width="24" height="24" transform="translate(-3 -2)"/>
+    </g>
+  </g>
+</svg>
