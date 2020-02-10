@@ -1,5 +1,4 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import './App.css';
 
@@ -12,36 +11,25 @@ class App extends React.Component {
 
       this.state = {
         url: null,
+        searched: false,
       };
 
       this.setUrl = this.setUrl.bind(this);
   }
 
   setUrl(url){
-    if(!url.includes("http://" && !url.includes("https://"))){
-      console.log("Must be a web address!");
-    }
-
-    this.setState({url: url});
+    this.setState({
+      url: url,
+      searched: true
+    });
   }
 
   render(){
     return (
-      <Router>
-        <div className="App">
-          <Switch>
-
-            <Route path="/view">
-              <View/>
-            </Route>
-
-            <Route path="/">
-              <Home setUrl={this.setUrl}/>
-            </Route>
-
-          </Switch>
-        </div>
-      </Router>
+      <div className="App">
+        <View viewUrl={this.state.url} searched={this.state.searched}/>
+        <Home setUrl={this.setUrl}/>
+      </div>
     );
   }
 }
