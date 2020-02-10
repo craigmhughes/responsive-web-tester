@@ -5,6 +5,8 @@ import SearchIcon from '../assets/icons/search.svg';
 class Home extends React.Component {
     constructor(props){
         super(props);
+
+        this.urlInput = React.createRef();
     }
 
     render(){
@@ -14,8 +16,8 @@ class Home extends React.Component {
                 <p className="subtitle">Test the responsiveness of your site</p>
 
                 <div className="search-field">
-                    <input type="search" placeholder="enter your url here..."></input>
-                    <button><img src={SearchIcon}/></button>
+                    <input type="search" placeholder="enter your url here..." ref={this.urlInput}></input>
+                    <button onClick={()=>{this.props.setUrl(this.urlInput.current.value)}}><img src={SearchIcon}/></button>
                 </div>
 
                 <p className="credit">
