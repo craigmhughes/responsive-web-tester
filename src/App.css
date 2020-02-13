@@ -64,6 +64,7 @@
   position: fixed;
   height: 100%;
   width: 100%;
+  min-width: 1280px;
   top: 0;
   left: 0;
   overflow-y: scroll;
@@ -148,6 +149,9 @@
 #resp-viewer > .container > .device-select > ul > li:last-child {
   border-bottom: none;
 }
+#resp-viewer > .container > .device-select > ul > li.active {
+  color: #4285f4;
+}
 #resp-viewer > .container > .device-select > ul > li img {
   height: 1.5em;
 }
@@ -176,6 +180,7 @@
   position: absolute;
   top: calc(50% - 50px);
   left: 50%;
+  transition: all 1s ease-in-out;
 }
 
 .App {
@@ -226,14 +231,10 @@ a {
   z-index: 100;
   letter-spacing: -0.04em;
   font-weight: 400;
-  bottom: 1em;
-  left: calc(50% - 100px);
+  bottom: 9em;
+  left: -5em;
+  transform: rotateZ(-90deg) skewX(-10deg);
   color: #818181;
-  opacity: 0.6;
-  transition: opacity 0.25s ease-in-out;
-}
-#credit:hover {
-  opacity: 1;
 }
 #credit > a > img {
   height: 1.5em;
@@ -243,7 +244,6 @@ a {
 #credit > a {
   font-weight: 600;
   color: #222;
-  letter-spacing: -0.05em;
 }
 
 /*# sourceMappingURL=App.css.map */

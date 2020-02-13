@@ -13,6 +13,8 @@ class View extends React.Component {
         this.state = {
             deviceHeight: 823,
             deviceWidth: 411,
+            deviceScale: 0.75,
+            activeDevice: 1,
             toggleSearch: false
         }
 
@@ -35,11 +37,21 @@ class View extends React.Component {
         }
     }
 
-    setDeviceSize(w,h,s){
+    setDeviceSize(i){
+
+        // Width, Height, Scale
+        let deviceSizes = [
+            [375,667, 0.8],
+            [411,823, 0.75],
+            [1024,768, 0.75],
+            [1280,800, 0.6],
+            [1680,1050, 0.6]
+        ];
         this.setState({
-            deviceWidth: w,
-            deviceHeight: h,
-            deviceScale: s
+            deviceWidth: deviceSizes[i][0],
+            deviceHeight: deviceSizes[i][1],
+            deviceScale: deviceSizes[i][2],
+            activeDevice: i
         });
     }
 
@@ -62,11 +74,26 @@ class View extends React.Component {
 
                         <div className="device-select">
                             <ul>
-                                <li onClick={()=>{this.setDeviceSize(375,667,0.8)}}><img src={SmartphoneIcon}/><p>Mobile<span>375 x 667</span></p></li>
-                                <li onClick={()=>{this.setDeviceSize(411,823,0.75)}}><img src={SmartphoneIcon}/><p>Large Mobile<span>411 x 823</span></p></li>
-                                <li onClick={()=>{this.setDeviceSize(1024,768,0.75)}}><img src={TabletIcon}/><p>Tablet<span>1024 x 768</span></p></li>
-                                <li onClick={()=>{this.setDeviceSize(1280,800,0.6)}}><img src={SmartphoneIcon}/><p>Small Laptop<span>1280 x 800</span></p></li>
-                                <li onClick={()=>{this.setDeviceSize(1680,1050,0.6)}}><img src={DesktopIcon}/><p>Desktop<span>1680 x 1050</span></p></li>
+                                <li className={this.state.activeDevice === 0 ? "active" : ""} 
+                                    onClick={()=>{this.setDeviceSize(0)}}>
+                                        <img src={SmartphoneIcon}/><p>Mobile<span>375 x 667</span></p>
+                                </li>
+                                <li className={this.state.activeDevice === 1 ? "active" : ""} 
+                                    onClick={()=>{this.setDeviceSize(1)}}>
+                                        <img src={SmartphoneIcon}/><p>Large Mobile<span>411 x 823</span></p>
+                                </li>
+                                <li className={this.state.activeDevice === 2 ? "active" : ""} 
+                                    onClick={()=>{this.setDeviceSize(2)}}>
+                                        <img src={TabletIcon}/><p>Tablet<span>1024 x 768</span></p>
+                                </li>
+                                <li className={this.state.activeDevice === 3 ? "active" : ""} 
+                                    onClick={()=>{this.setDeviceSize(3)}}>
+                                        <img src={SmartphoneIcon}/><p>Small Laptop<span>1280 x 800</span></p>
+                                </li>
+                                <li className={this.state.activeDevice === 4 ? "active" : ""} 
+                                    onClick={()=>{this.setDeviceSize(4)}}>
+                                        <img src={DesktopIcon}/><p>Desktop<span>1680 x 1050</span></p>
+                                </li>
                             </ul>
                         </div>
 
