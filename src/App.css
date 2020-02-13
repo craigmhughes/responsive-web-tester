@@ -16,7 +16,7 @@
   width: 80%;
   margin: 0 auto;
   justify-content: center;
-  border-radius: 54px;
+  border-radius: 27px;
   background: #efedf3;
   box-shadow: 7px 7px 12px #aeadb1, -7px -7px 12px #ffffff;
   margin-top: 0px;
@@ -31,17 +31,17 @@
 #home .search-field input[type=search] {
   width: 100%;
   background: none;
-  padding: 1em 0.75em 1em 1.5em;
+  padding: 1.5em 0.75em 1.5em 2em;
   font-weight: 500;
 }
 #home .search-field > button {
-  height: 5em;
-  padding: 1em 4em;
+  height: 6.75em;
+  padding: 1.5em 4em;
   position: relative;
   left: -0.5em;
   top: 0.35em;
   border: none;
-  border-radius: 54px;
+  border-radius: 22px;
   background: linear-gradient(45deg, #ffffff, #efedf3);
   box-shadow: 7px 7px 12px #aeadb1, -7px -7px 12px #efedf3;
   transition: all 0.25s ease-in-out;
@@ -68,9 +68,14 @@
   left: 0;
   overflow-y: scroll;
   z-index: 100;
-  transition: all 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  opacity: 1;
 }
 #resp-viewer.hidden {
+  top: 100%;
+  opacity: 0;
+}
+#resp-viewer.hidden > .container #search-button, #resp-viewer.hidden > .container .url, #resp-viewer.hidden > .container .device-select {
   top: 100%;
 }
 #resp-viewer > .container {
@@ -79,8 +84,9 @@
 #resp-viewer > .container .url {
   border-radius: 30px;
   background: #efedf3;
-  box-shadow: 7px 7px 12px #aeadb1, -7px -7px 12px #ffffff;
+  box-shadow: 7px 7px 12px #00000013, -7px -7px 12px #00000013;
   cursor: pointer;
+  font-weight: 500;
   position: fixed;
   padding: 1.6em;
   top: calc(50% - 290px);
@@ -88,7 +94,9 @@
   z-index: 11;
   height: 90px;
   width: 0px;
-  transition: all 0.5s ease-out;
+  transition-property: width, box-shadow;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
 }
 #resp-viewer > .container .url.active {
   width: 400px;
@@ -104,6 +112,10 @@
   top: calc(50% - 290px);
   right: 4.5em;
   z-index: 11;
+  transition: box-shadow 0.5s ease-in-out;
+}
+#resp-viewer > .container #search-button:active {
+  box-shadow: -7px -7px 12px #aeadb1, 7px 7px 12px #ffffff;
 }
 #resp-viewer > .container > .device-select {
   width: max-content;
@@ -113,9 +125,13 @@
   background: #efedf3;
   box-shadow: 7px 7px 12px #aeadb1, -7px -7px 12px #ffffff;
   position: fixed;
-  bottom: calc(50% - 270px);
+  bottom: calc(50% - 280px);
   right: 4em;
   z-index: 10;
+  transition: box-shadow 0.5s ease-in-out;
+}
+#resp-viewer > .container > .device-select:active {
+  box-shadow: -7px -7px 12px #aeadb1, 7px 7px 12px #ffffff;
 }
 #resp-viewer > .container > .device-select > ul {
   list-style: none;
@@ -158,7 +174,7 @@
   border-radius: 25px;
   box-shadow: 7px 7px 12px #89888b, -7px -7px 12px #ffffff;
   position: absolute;
-  top: calc(50% - 20px);
+  top: calc(50% - 50px);
   left: 50%;
 }
 

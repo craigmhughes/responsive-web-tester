@@ -11,7 +11,7 @@ class App extends React.Component {
 
       this.state = {
         url: null,
-        searched: true,
+        searched: false,
       };
 
       this.setUrl = this.setUrl.bind(this);

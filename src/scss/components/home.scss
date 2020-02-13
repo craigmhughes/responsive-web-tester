@@ -19,7 +19,7 @@
         margin: 0 auto;
         justify-content: center;
 
-        border-radius: 54px;
+        border-radius: 27px;
         background: $background_color;
         box-shadow:  7px 7px 12px #aeadb1, 
                      -7px -7px 12px #ffffff;
@@ -41,19 +41,19 @@
         input[type=search]{
             width: 100%;
             background: none;
-            padding: 1em 0.75em 1em 1.5em;
+            padding: 1.5em 0.75em 1.5em 2em;
             font-weight: 500;
         }
 
         & > button { 
-            height: 5em;
-            padding: 1em 4em;
+            height: 6.75em;
+            padding: 1.5em 4em;
             position: relative;
             left: -0.5em;
             top: 0.35em;
 
             border: none;
-            border-radius: 54px;
+            border-radius: 22px;
             background: linear-gradient(45deg, #ffffff, $background_color);
             box-shadow:  7px 7px 12px #aeadb1, 
                         -7px -7px 12px $background_color;

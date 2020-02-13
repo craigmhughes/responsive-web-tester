@@ -35,10 +35,11 @@ class View extends React.Component {
         }
     }
 
-    setDeviceSize(w,h){
+    setDeviceSize(w,h,s){
         this.setState({
             deviceWidth: w,
-            deviceHeight: h
+            deviceHeight: h,
+            deviceScale: s
         });
     }
 
@@ -61,15 +62,15 @@ class View extends React.Component {
 
                         <div className="device-select">
                             <ul>
-                                <li onClick={()=>{this.setDeviceSize(375,667)}}><img src={SmartphoneIcon}/><p>Mobile<span>375 x 667</span></p></li>
-                                <li onClick={()=>{this.setDeviceSize(411,823)}}><img src={SmartphoneIcon}/><p>Large Mobile<span>411 x 823</span></p></li>
-                                <li onClick={()=>{this.setDeviceSize(1024,768)}}><img src={TabletIcon}/><p>Tablet<span>1024 x 768</span></p></li>
-                                <li onClick={()=>{this.setDeviceSize(1280,800)}}><img src={SmartphoneIcon}/><p>Small Laptop<span>1280 x 800</span></p></li>
-                                <li onClick={()=>{this.setDeviceSize(1680,1050)}}><img src={DesktopIcon}/><p>Desktop<span>1680 x 1050</span></p></li>
+                                <li onClick={()=>{this.setDeviceSize(375,667,0.8)}}><img src={SmartphoneIcon}/><p>Mobile<span>375 x 667</span></p></li>
+                                <li onClick={()=>{this.setDeviceSize(411,823,0.75)}}><img src={SmartphoneIcon}/><p>Large Mobile<span>411 x 823</span></p></li>
+                                <li onClick={()=>{this.setDeviceSize(1024,768,0.75)}}><img src={TabletIcon}/><p>Tablet<span>1024 x 768</span></p></li>
+                                <li onClick={()=>{this.setDeviceSize(1280,800,0.7)}}><img src={SmartphoneIcon}/><p>Small Laptop<span>1280 x 800</span></p></li>
+                                <li onClick={()=>{this.setDeviceSize(1680,1050,0.6)}}><img src={DesktopIcon}/><p>Desktop<span>1680 x 1050</span></p></li>
                             </ul>
                         </div>
 
-                        <Device width={this.state.deviceWidth} height={this.state.deviceHeight} frameSrc={this.props.viewUrl}/>
+                        <Device width={this.state.deviceWidth} height={this.state.deviceHeight} scale={this.state.deviceScale} frameSrc={this.props.viewUrl}/>
                 </div>
             </div>
         );
