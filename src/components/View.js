@@ -4,6 +4,7 @@ import Device from './Device';
 import SmartphoneIcon from '../assets/icons/smartphone.svg';
 import TabletIcon from '../assets/icons/tablet.svg';
 import DesktopIcon from '../assets/icons/monitor.svg';
+import SearchIcon from '../assets/icons/search.svg';
 
 class View extends React.Component {
     constructor(props){
@@ -11,7 +12,8 @@ class View extends React.Component {
 
         this.state = {
             deviceHeight: 823,
-            deviceWidth: 411
+            deviceWidth: 411,
+            toggleSearch: false
         }
 
         this.urlInput = React.createRef();
@@ -40,14 +42,22 @@ class View extends React.Component {
         });
     }
 
+    hideSearch(e){
+        if(e.target !== this.urlInput.current && this.state.toggleSearch){
+            this.setState({
+                toggleSearch: false
+            });
+        }
+    }
+
     render(){
         return(
-            <div id="resp-viewer" className={this.props.searched ? null : "hidden"}>
-                <div className="container">
-                    <section className="header">
-                        <p>{this.props.viewUrl ? "Viewing" : "View a site"}</p>
-                        <input ref={this.urlInput} className="url" type="search" placeholder="Enter a URL here..." defaultValue={this.props.viewUrl || ""}
+            <div id="resp-viewer" className={this.props.searched ? null : "hidden"} onClick={(e)=>{this.hideSearch(e)}}>
+                <div className="container" onClick={(e)=>{this.hideSearch(e)}}>
+                    <input ref={this.urlInput} className={this.state.toggleSearch ? "url active" : "url"} type="search" placeholder="enter an address here..." defaultValue={this.props.viewUrl || ""}
                             onKeyDown={(e)=>{this.sendUrl(e)}}/>
+
+                        <img src={SearchIcon} id="search-button" onClick={()=>{this.setState({toggleSearch: !this.state.toggleSearch})}}/>
 
                         <div className="device-select">
                             <ul>
@@ -58,10 +68,8 @@ class View extends React.Component {
                                 <li onClick={()=>{this.setDeviceSize(1680,1050)}}><img src={DesktopIcon}/><p>Desktop<span>1680 x 1050</span></p></li>
                             </ul>
                         </div>
-                    </section>
-                    <section className="body">
+
                         <Device width={this.state.deviceWidth} height={this.state.deviceHeight} frameSrc={this.props.viewUrl}/>
-                    </section>
                 </div>
             </div>
         );
