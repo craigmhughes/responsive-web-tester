@@ -13,6 +13,7 @@
 }
 
 body {
+    background: $background_color;
     font-family: $primary_font;
     letter-spacing: -0.05em;
 }
@@ -24,16 +25,14 @@ body {
 }
 
 input[type=search]{
-    background: #e3e3e3;
     border: none;
-    border-radius: 5em;
     font-size: 1.25em;
     outline: none;
     position: relative;
     top: -0.02em;
 
     &, &::placeholder{
-        letter-spacing: -0.045em;
+        letter-spacing: -0.05em;
     }
 
     &::placeholder {

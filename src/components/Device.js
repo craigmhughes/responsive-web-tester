@@ -6,10 +6,15 @@ class Device extends React.Component {
         super(props);
     }
 
+    // TODO - Add SVG graphics for device borders.
     render(){
         return(
             <div className="device-preview">
-                <iframe src={this.props.frameSrc} width={this.props.width} height={this.props.height}></iframe>
+                <iframe src={this.props.frameSrc} width={this.props.width} height={this.props.height}
+                    style={{
+                        marginLeft: -(this.props.width / 2 - 6),
+                        marginTop: -(this.props.height / 2 - 50)
+                    }}></iframe>
             </div>
         );
     }

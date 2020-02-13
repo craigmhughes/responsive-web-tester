@@ -18,31 +18,50 @@
         width: 80%;
         margin: 0 auto;
         justify-content: center;
-        background: #fff;
-        box-shadow: 1px 1px 10px rgba(0,0,0,0.25);
-        border-radius: 5em;
 
-        margin-top: 100px;
+        border-radius: 54px;
+        background: $background_color;
+        box-shadow:  7px 7px 12px #aeadb1, 
+                     -7px -7px 12px #ffffff;
+
+        margin-top: 0px;
+
+        transition: box-shadow 0.25s ease-in-out;
+
+        &.active {
+            box-shadow:  -7px -7px 12px #aeadb1, 
+                     7px 7px 12px #ffffff;
+
+            & > button {
+                box-shadow:  -3px -3px 12px #aeadb1, 
+                     -7px 7px 12px $background_color;
+            }
+        }
 
         input[type=search]{
             width: 100%;
             background: none;
             padding: 1em 0.75em 1em 1.5em;
+            font-weight: 500;
         }
 
-        & > button {
-            background: #fff;
-            border: none;
-            border-radius: 5em;
+        & > button { 
             height: 5em;
             padding: 1em 4em;
             position: relative;
             left: -0.5em;
             top: 0.35em;
-            box-shadow: 1px 1px 10px rgba(0,0,0,0.25);
+
+            border: none;
+            border-radius: 54px;
+            background: linear-gradient(45deg, #ffffff, $background_color);
+            box-shadow:  7px 7px 12px #aeadb1, 
+                        -7px -7px 12px $background_color;
+
+            transition: all 0.25s ease-in-out;
 
             &:active {
-                background: #f3f3f3;
+                background: #ffffff;
             }
         }
     }

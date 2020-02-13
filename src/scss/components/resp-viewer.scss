@@ -1,5 +1,5 @@
 #resp-viewer {
-    background: #fff;
+    background: $background_color;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -7,7 +7,7 @@
     left: 0;
 
     display: grid;
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: 1fr 6fr;
     overflow-y: scroll;
 
     z-index: 100;
@@ -19,7 +19,7 @@
 
     section.header {
         text-align: center;
-        padding: 2em;
+        padding-top: 2em;
 
         & > p {
             margin: 0;
@@ -43,7 +43,83 @@
             appearance: none;
 
             &:focus {
-                border-bottom: 2px solid $brand_color;
+                border-bottom: 2px solid #222;
+            }
+        }
+
+        & > .device-select {
+            width: max-content;
+            margin: 0 auto;
+            padding: 1em;
+            border-radius: 30px;
+            background: $background_color;
+            box-shadow:  7px 7px 12px #aeadb1, 
+                        -7px -7px 12px #ffffff;
+
+            position: fixed;
+            bottom: calc(50% - 250px);
+            right: 4em;
+            z-index: 10;
+
+            & > ul {
+                // display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                & > li {
+                    font-size: 0.75em;
+                    letter-spacing: -0.03em;
+                    cursor: pointer;
+                    padding: 1em 0;
+                    border-bottom: 1px solid rgb(204, 204, 204);
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    img {
+                        height: 1.5em;
+                    }
+
+                    p {
+                        margin: 0;
+                        line-height: 150%;
+
+                        & > span {
+                            font-size: 0.9em;
+                            color: grey;
+
+                            &::before {
+                                content: "\A";
+                                white-space: pre;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section.body {
+        text-align: center;
+
+        .device-preview {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+
+            & > iframe {
+                transform: scale(0.6);
+                border: none;
+    
+                border-radius: 25px;
+                box-shadow:  7px 7px 12px #89888b, 
+                         -7px -7px 12px #ffffff;
+
+                position: absolute;
+                top: calc(50% - 20px);
+                left: 50%;
             }
         }
     }

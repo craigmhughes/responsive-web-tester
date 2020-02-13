@@ -11,7 +11,7 @@ class App extends React.Component {
 
       this.state = {
         url: null,
-        searched: false,
+        searched: true,
       };
 
       this.setUrl = this.setUrl.bind(this);
@@ -23,11 +23,11 @@ class App extends React.Component {
       searched: true
     });
   }
-
+  
   render(){
     return (
       <div className="App">
-        <View viewUrl={this.state.url} searched={this.state.searched}/>
+        <View viewUrl={this.state.url} searched={this.state.searched} setUrl={this.setUrl}/>
         <Home setUrl={this.setUrl}/>
       </div>
     );
