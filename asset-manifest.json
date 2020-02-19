@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e4a9ca4d.chunk.css",
+    "main.js": "/static/js/main.386c587b.chunk.js",
+    "main.js.map": "/static/js/main.386c587b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2cc14523.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2cc14523.js.map",
+    "static/js/2.f0af7f95.chunk.js": "/static/js/2.f0af7f95.chunk.js",
+    "static/js/2.f0af7f95.chunk.js.map": "/static/js/2.f0af7f95.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.cf8896c27ed288f161b1fcc7a2c297cb.js": "/precache-manifest.cf8896c27ed288f161b1fcc7a2c297cb.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.e4a9ca4d.chunk.css.map": "/static/css/main.e4a9ca4d.chunk.css.map",
+    "static/js/2.f0af7f95.chunk.js.LICENSE.txt": "/static/js/2.f0af7f95.chunk.js.LICENSE.txt",
+    "static/media/monitor.svg": "/static/media/monitor.0f1222c0.svg",
+    "static/media/react-brands.svg": "/static/media/react-brands.b0d49312.svg",
+    "static/media/search.svg": "/static/media/search.5437e521.svg",
+    "static/media/smartphone.svg": "/static/media/smartphone.2b990350.svg",
+    "static/media/tablet.svg": "/static/media/tablet.3b74c4e6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2cc14523.js",
+    "static/js/2.f0af7f95.chunk.js",
+    "static/css/main.e4a9ca4d.chunk.css",
+    "static/js/main.386c587b.chunk.js"
+  ]
+}
