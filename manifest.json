@@ -1,7 +1,6 @@
 {
   "short_name": "Resp Web Tester",
   "name": "Responsive Website Tester",
-  "homepage": "http://craigmhughes.github.io/responsive-web-tester",
   "icons": [
     {
       "src": "favicon.ico",
