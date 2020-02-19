@@ -2,6 +2,7 @@
   "name": "responsive-tester",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://craigmhughes.github.io/responsive-web-tester",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
