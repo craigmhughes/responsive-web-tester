@@ -3,7 +3,7 @@ import {motion} from 'framer-motion';
 
 import SearchIcon from '../assets/icons/search.svg';
 
-class App extends React.Component {
+class Search extends React.Component {
   constructor(props){
       super(props);
 
@@ -11,7 +11,7 @@ class App extends React.Component {
   }
   
   render(){
-    
+
     // Animation object decides styles for each animation state.
     const pageTransition = {
       in: {
@@ -48,11 +48,18 @@ class App extends React.Component {
             </section>
 
             <section className="footer">
-                    <button className="primary-btn btn" onClick={()=>{this.props.useUrl(this.urlInput.current.value)}}>Continue</button>
+                    <button className="primary-btn btn" onClick={()=>{
+                      let hasUrl = this.props.useUrl(this.urlInput.current.value) !== false;
+
+                      if(hasUrl){
+                        this.props.history.push("device-select");
+                      }
+
+                      }}>Continue</button>
                 </section>
         </motion.main>
     );
   }
 }
 
-export default App;
+export default Search;

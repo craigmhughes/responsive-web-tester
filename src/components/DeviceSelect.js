@@ -2,11 +2,7 @@ import React from 'react';
 import {motion} from 'framer-motion';
 
 
-class App extends React.Component {
-  constructor(props){
-      super(props);
-
-  }
+class DeviceSelect extends React.Component {
   
   render(){
     const pageTransition = {
@@ -40,11 +36,11 @@ class App extends React.Component {
             </section>
 
             <section className="footer">
-                <button className="primary-btn btn">Reselect Devices</button>
+                <button className="primary-btn btn">View Devices</button>
             </section>
         </motion.main>
     );
   }
 }
 
-export default App;
+export default DeviceSelect;
