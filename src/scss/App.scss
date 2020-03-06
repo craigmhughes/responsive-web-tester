@@ -26,14 +26,16 @@ body {
 }
 
 input[type=search]{
+    background: none;
     border: none;
     font-size: 1.25em;
+    font-weight: 600;
     outline: none;
     position: relative;
     top: -0.02em;
 
     &, &::placeholder{
-        letter-spacing: -0.05em;
+        letter-spacing: -0.04em;
     }
 
     &::placeholder {

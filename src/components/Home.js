@@ -1,8 +1,6 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 
-import SearchIcon from '../assets/icons/search.svg';
-
 // SVG Art
 import SplashArt from '../assets/svg-art/Splash Vector.svg';
 import SplashUnderlay from '../assets/svg-art/Splash Vector (Underlay).svg';
@@ -16,43 +14,9 @@ class Home extends React.Component {
         this.artSection = React.createRef();
     }
 
-    componentDidMount(){
-        let artElements = this.artSection.current.children;
-
-        // setTimeout(()=>{
-        //     artElements[0].style.width = "120%";
-        //     artElements[0].style.marginLeft = "-10%";
-        //     artElements[0].style.marginTop = "-5%";
-        //     artElements[0].style.opacity = 1;
-        // }, 100);
-
-        // setTimeout(()=>{
-        //     artElements[1].style.width = "90%";
-        //     artElements[1].style.marginLeft = "5%";
-        //     artElements[1].style.marginTop = "0%";
-        //     artElements[1].style.opacity = 1;
-        // }, 200);
-        
-    }
-
-    sendUrl(e){
-        if(e === "submit" || e.key === 'Enter'){
-            let urlMatch = this.urlInput.current.value.match(new RegExp('(https?:\/\/)'));
-            let urlMatchTwo = this.urlInput.current.value.match(new RegExp('(\.)'));
-
-            if(urlMatch || urlMatchTwo){
-                let urlToSend = this.urlInput.current.value;
-
-                if(urlMatchTwo && !urlMatch){
-                    urlToSend = "https://" + urlToSend;
-                }
-                this.props.setUrl(urlToSend);
-            }
-        }
-    }
-
     render(){
 
+        // Animation object decides styles for each animation state.
         const pageTransition = {
             in: {
                 opacity: 1,
@@ -92,15 +56,6 @@ class Home extends React.Component {
             </motion.main>
         );
     }
-
-    // <div className="search-field" ref={this.search}>
-    //     <input type="search" placeholder="enter your url here..." ref={this.urlInput} 
-    //         onFocus={()=>{this.search.current.className = "search-field active"}} 
-    //         onBlur={()=>{this.search.current.className = "search-field"}}
-    //         onKeyDown={(e)=>{this.sendUrl(e)}}></input>
-
-    //     <button onClick={()=>{this.sendUrl("submit")}}><img src={SearchIcon}/></button>
-    // </div>
 
 }
 

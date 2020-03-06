@@ -70,6 +70,29 @@
 }
 #search > section.body {
   display: flex;
+  align-items: flex-start;
+  margin-top: 1em;
+}
+#search > section.body > .search-field {
+  background: #e3e3e3;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: 1.5fr 8.5fr;
+  padding: 1em 1em;
+  width: calc(100% - 2em);
+}
+#search > section.body > .search-field > input {
+  font-size: 0.9em;
+}
+#search > section.body > .search-field > input::placeholder {
+  color: #8d8d8d;
+  text-transform: capitalize;
+}
+#search > section.body > .search-field > img {
+  opacity: 0.85;
+}
+#search > section.footer {
+  display: flex;
   align-items: center;
 }
 
@@ -218,14 +241,16 @@ body {
 }
 
 input[type=search] {
+  background: none;
   border: none;
   font-size: 1.25em;
+  font-weight: 600;
   outline: none;
   position: relative;
   top: -0.02em;
 }
 input[type=search], input[type=search]::placeholder {
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
 }
 input[type=search]::placeholder {
   font-family: "DM Sans", sans-serif;

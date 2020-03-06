@@ -1,18 +1,14 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 
-import SearchIcon from '../assets/icons/search.svg';
 
 class App extends React.Component {
   constructor(props){
       super(props);
 
-      this.urlInput = React.createRef();
   }
   
   render(){
-    
-    // Animation object decides styles for each animation state.
     const pageTransition = {
       in: {
         opacity: 1,
@@ -36,20 +32,16 @@ class App extends React.Component {
             variants={pageTransition}
         >
             <header>
-                <h1>Which site are you testing?</h1>
+                <h1>Device View</h1>
             </header>
 
             <section className="body">
-              <div className="search-field" ref={this.search}>
-                <img src={SearchIcon}/>
 
-                <input type="search" placeholder="Enter your URL here" ref={this.urlInput}></input>              
-              </div>
             </section>
 
             <section className="footer">
-                    <button className="primary-btn btn" onClick={()=>{this.props.useUrl(this.urlInput.current.value)}}>Continue</button>
-                </section>
+                <button className="primary-btn btn">Reselect Devices</button>
+            </section>
         </motion.main>
     );
   }
