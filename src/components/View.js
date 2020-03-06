@@ -11,9 +11,7 @@ class View extends React.Component {
         super(props);
 
         this.state = {
-            deviceHeight: 823,
-            deviceWidth: 411,
-            deviceScale: 0.75,
+            deviceDimensions: 823,
             activeDevice: 1,
             toggleSearch: false
         }
@@ -65,7 +63,7 @@ class View extends React.Component {
 
     render(){
         return(
-            <div id="resp-viewer" className={this.props.searched ? null : "hidden"} onClick={(e)=>{this.hideSearch(e)}}>
+            <section id="resp-viewer" className={this.props.searched ? null : "hidden"} onClick={(e)=>{this.hideSearch(e)}}>
                 <div className="container" onClick={(e)=>{this.hideSearch(e)}}>
                     <input ref={this.urlInput} className={this.state.toggleSearch ? "url active" : "url"} type="search" placeholder="enter an address here..." defaultValue={this.props.viewUrl || ""}
                             onKeyDown={(e)=>{this.sendUrl(e)}}/>
@@ -99,7 +97,7 @@ class View extends React.Component {
 
                         <Device width={this.state.deviceWidth} height={this.state.deviceHeight} scale={this.state.deviceScale} frameSrc={this.props.viewUrl}/>
                 </div>
-            </div>
+            </section>
         );
     }
 }

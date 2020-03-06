@@ -1,0 +1,25 @@
+#search {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: 2.5fr 5fr 2.5fr;
+    height: 100%;
+    max-width: 650px;
+
+    & > header {
+        display: flex;
+        align-items: flex-end;
+        text-align: center;
+
+        & > h1 {
+            margin: 0 auto;
+            letter-spacing: -0.05em;
+            line-height: 100%;
+        }
+    }
+
+    & > section.body {
+        display: flex;
+        align-items: center;
+
+    }
+}

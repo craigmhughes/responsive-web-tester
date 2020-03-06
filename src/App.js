@@ -1,12 +1,15 @@
 import React from 'react';
+import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
+import {AnimatePresence} from 'framer-motion';
 
-import './App.css';
-import ReactIcon from './assets/icons/react-brands.svg';
 
+import "./App.css";
 import Home from './components/Home';
-import View from './components/View';
+import Search from './components/Search';
 
 class App extends React.Component {
+  static displayName = App.name;
+  
   constructor(props){
       super(props);
 
@@ -27,11 +30,14 @@ class App extends React.Component {
   
   render(){
     return (
-      <div className="App">
-        <View viewUrl={this.state.url} searched={this.state.searched} setUrl={this.setUrl}/>
-        <Home setUrl={this.setUrl}/>
-        <p id="credit">Made with <a href="https://reactjs.org/"><img src={ReactIcon}/></a> by <a href="https://github.com/craigmhughes">Craig Hughes</a></p>
-      </div>
+      <Router className="App">
+        <AnimatePresence exitBeforeEnter>
+          <Switch location={this.props.history} key={this.props.history}>
+            <Route exact path='/' render={(props)=><Home history={props.history}/>} />
+            <Route exact path='/search' render={(props)=><Search setUrl={this.setUrl} history={props.history}/>} />
+          </Switch>
+        </AnimatePresence>
+      </Router>
     );
   }
 }
