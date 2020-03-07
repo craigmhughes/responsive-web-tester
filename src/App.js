@@ -42,7 +42,10 @@ class App extends React.Component {
 
     return "device-select";
   }
-  
+  /**
+   * TODO: Validate HTML, CSS & SVGs.
+   * Look up front end framework (Gatsby, Rust, etc)
+   */
   render(){
     return (
       <Router className="App">

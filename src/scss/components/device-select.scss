@@ -1,0 +1,103 @@
+#device-select {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: 2.5fr 5fr 2.5fr;
+    height: 100%;
+    max-width: 650px;
+
+    & > header {
+        display: flex;
+        align-items: flex-end;
+        text-align: center;
+
+        & > h1 {
+            margin: 0 auto;
+            margin-bottom: 1em;
+            letter-spacing: -0.05em;
+            line-height: 100%;
+        }
+    }
+
+    & > section.body {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        width: 100%;
+        max-width: inherit;
+        // overflow-y: scroll;
+        // overflow-x: hidden;
+
+        & > section {
+            width: 100%;
+            max-width: inherit;
+
+            & > h2.subtitle {
+                font-size: 0.9em;
+                letter-spacing: -0.05em;
+                font-weight: 600;
+                margin-top: 0;
+            }
+
+            & > ul.device-list {
+                display: -webkit-box;
+                list-style: none;
+                padding: 1em;
+                margin: 0;
+                // width: 45%;
+                width: 100%;
+                overflow-x: scroll;
+
+                &::after {
+                    content: " ";
+                    padding: 0 1em;
+                    width: 100px;
+                    float: right;
+                }
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                & > li {
+                    cursor: pointer;
+                    display: grid;
+                    align-items: flex-end;
+                    background: #eeeeee;
+                    padding: 1.5em 0.75em;
+                    border-radius: 1em;
+                    margin-right: 1em;
+                    margin-left: -0.5em;
+                    text-align: center;
+
+                    transition: background 0.25s ease-in-out;
+
+                    &:hover {
+                        background: #dbdbdb
+                    }
+
+                    &.active {
+                        background: $brand_color;
+                        color: #fff;
+                    }
+
+                    & > h3 {
+                        font-size: 0.9em;
+                        margin: 0.25em auto 0.25em auto;
+                        width: 80%;
+                    }
+
+                    & > p {
+                        text-transform: uppercase;
+                        letter-spacing: 0.05em;
+                        font-size: 0.5em;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+
+    & > section.footer {
+        display: flex;
+        align-items: center;
+    }
+}

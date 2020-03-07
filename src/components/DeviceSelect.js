@@ -1,10 +1,33 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 
+import DeviceOption from './DeviceOption';
+
 
 class DeviceSelect extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      activeDevices: [null, null]
+    };
+
+    this.setActiveDevice = this.setActiveDevice.bind(this);
+  }
+
+  setActiveDevice(option, index){
+
+    console.log(this.state.activeDevices);
+
+    this.setState({
+      activeDevices: option > 0 ? [ this.state.activeDevices[0], [option, index] ] :
+        [ [option, index], this.state.activeDevices[1] ]
+    });
+  }
   
   render(){
+
+    //  Controls Framer Motion animation states.
     const pageTransition = {
       in: {
         opacity: 1,
@@ -20,19 +43,70 @@ class DeviceSelect extends React.Component {
       }
     };
 
+    // Device information to be rendered.
+    const deviceInfo = [
+      {
+          title: "Small Mobile",
+          dimensions: "375 x 667"
+      },
+      {
+          title: "Large Mobile",
+          dimensions: "411 x 823"
+      },
+      {
+          title: "Tablet",
+          dimensions: "1024 x 768"
+      },
+      {
+          title: "Small Laptop",
+          dimensions: "1280 x 800"
+      },
+      {
+          title: "Desktop",
+          dimensions: "1680 x 1050"
+      },
+    ];
+
+    let activeDevices = [this.state.activeDevices[0] !== null ? this.state.activeDevices[0][1] : null,
+      this.state.activeDevices[1] !== null ? this.state.activeDevices[1][1] : null];
+
+    let deviceOptions = [[],[]];
+
+    // Run through options and create elements for them.
+    deviceInfo.forEach(info => {
+      let index = deviceInfo.indexOf(info);
+      // Push to Option One array
+      deviceOptions[0].push(<DeviceOption key={index} index={index} title={info.title} dimensions={info.dimensions} 
+        option={0} activeDevice={activeDevices[0]} setActiveDevice={this.setActiveDevice}/>);
+      // Push to Option Two array
+      deviceOptions[1].push(<DeviceOption key={index} index={index} title={info.title} dimensions={info.dimensions} 
+        option={1} activeDevice={activeDevices[1]} setActiveDevice={this.setActiveDevice}/>);
+    });
+
     return(
-        <motion.main className="container" id="search"
+        <motion.main className="container" id="device-select"
             initial="in"
             animate="init"
             exit="out"
             variants={pageTransition}
         >
             <header>
-                <h1>Device View</h1>
+                <h1>Choose devices to compare</h1>
             </header>
 
             <section className="body">
-
+              <section>
+                <h2 className="subtitle">Option One</h2>
+                <ul className="device-list">
+                  {deviceOptions[0]}
+                </ul>
+              </section>
+              <section>
+                <h2 className="subtitle">Option Two</h2>
+                <ul className="device-list">
+                  {deviceOptions[1]}
+                </ul>
+              </section>
             </section>
 
             <section className="footer">
