@@ -188,6 +188,38 @@
   align-items: center;
 }
 
+#device-view {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: 2.5fr 5fr 2.5fr;
+  height: 100%;
+  max-width: 1050px;
+}
+#device-view > header {
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+}
+#device-view > header > h1 {
+  margin: 0 auto;
+  margin-bottom: 1em;
+  letter-spacing: -0.05em;
+  line-height: 100%;
+}
+#device-view > section.body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#device-view > section.body > section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#device-view > section.footer {
+  display: flex;
+  align-items: center;
+}
+
 #resp-viewer {
   background: #fff;
   position: fixed;

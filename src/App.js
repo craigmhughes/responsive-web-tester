@@ -17,10 +17,12 @@ class App extends React.Component {
 
       this.state = {
         url: null,
-        urlFail: null
+        urlFail: null,
+        selectedDevices: null
       };
 
       this.useUrl = this.useUrl.bind(this);
+      this.setDevices = this.setDevices.bind(this);
 
       // Refs
       this.testIframe = React.createRef();
@@ -29,6 +31,7 @@ class App extends React.Component {
   /**
    * Check and use URL if it passes conditions.
    * @param {*} url - URL string passed from Search prop
+   * @returns String to pass to URL.
    */
   useUrl(url){
 
@@ -42,6 +45,18 @@ class App extends React.Component {
 
     return "device-select";
   }
+
+  setDevices(devices){
+
+    if(devices[0] == null || devices[1] == null){
+      return false;
+    }
+
+    this.setState({
+      selectedDevices: devices
+    });
+  }
+
   /**
    * TODO: Validate HTML, CSS & SVGs.
    * Look up front end framework (Gatsby, Rust, etc)
@@ -54,8 +69,8 @@ class App extends React.Component {
           <Switch location={this.props.history} key={this.props.history}>
             <Route exact path='/' render={(props)=><Home history={props.history}/>} />
             <Route exact path='/search' render={(props)=><Search useUrl={this.useUrl} history={props.history}/>} />
-            <Route exact path='/device-select' render={(props)=><DeviceSelect history={props.history}/>} />
-            <Route exact path='/view' render={(props)=><View />} />
+            <Route exact path='/device-select' render={(props)=><DeviceSelect history={props.history} setDevices={this.setDevices}/>} />
+            <Route exact path='/view' render={(props)=><View history={props.history} selectedDevices={this.state.selectedDevices}/>} />
           </Switch>
         </AnimatePresence>
       </Router>

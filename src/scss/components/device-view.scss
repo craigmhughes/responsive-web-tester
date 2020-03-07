@@ -1,0 +1,36 @@
+#device-view {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: 2.5fr 5fr 2.5fr;
+    height: 100%;
+    max-width: 1050px;
+
+    & > header {
+        display: flex;
+        align-items: flex-end;
+        text-align: center;
+
+        & > h1 {
+            margin: 0 auto;
+            margin-bottom: 1em;
+            letter-spacing: -0.05em;
+            line-height: 100%;
+        }
+    }
+
+    & > section.body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        & > section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    & > section.footer {
+        display: flex;
+        align-items: center;
+    }
+}

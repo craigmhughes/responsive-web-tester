@@ -22,9 +22,6 @@ class DeviceSelect extends React.Component {
   }
 
   setActiveDevice(option, index){
-
-    console.log(this.state.activeDevices);
-
     this.setState({
       activeDevices: option > 0 ? [ this.state.activeDevices[0], [option, index] ] :
         [ [option, index], this.state.activeDevices[1] ]
@@ -124,7 +121,10 @@ class DeviceSelect extends React.Component {
             </section>
 
             <section className="footer">
-                <button className="primary-btn btn">View Devices</button>
+                <button className="primary-btn btn" onClick={()=>{
+                    this.props.setDevices([this.state.activeDevices[0][1], this.state.activeDevices[1][1]]);
+                    this.props.history.push("/view");
+                  }}>View Devices</button>
             </section>
         </motion.main>
     );
