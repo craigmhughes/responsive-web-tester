@@ -1,6 +1,12 @@
 import React from 'react';
 import {motion} from 'framer-motion';
 
+import SmallMobile from '../assets/svg-art/Small Mobile.svg';
+import LargeMobile from '../assets/svg-art/Large Mobile.svg';
+import Tablet from '../assets/svg-art/Tablet.svg';
+import Laptop from '../assets/svg-art/Laptop.svg';
+import Desktop from '../assets/svg-art/Desktop.svg';
+
 import DeviceOption from './DeviceOption';
 
 
@@ -67,6 +73,14 @@ class DeviceSelect extends React.Component {
       },
     ];
 
+    const deviceIcons = [
+      SmallMobile,
+      LargeMobile,
+      Tablet,
+      Laptop,
+      Desktop
+    ];
+
     let activeDevices = [this.state.activeDevices[0] !== null ? this.state.activeDevices[0][1] : null,
       this.state.activeDevices[1] !== null ? this.state.activeDevices[1][1] : null];
 
@@ -77,10 +91,10 @@ class DeviceSelect extends React.Component {
       let index = deviceInfo.indexOf(info);
       // Push to Option One array
       deviceOptions[0].push(<DeviceOption key={index} index={index} title={info.title} dimensions={info.dimensions} 
-        option={0} activeDevice={activeDevices[0]} setActiveDevice={this.setActiveDevice}/>);
+        option={0} activeDevice={activeDevices[0]} setActiveDevice={this.setActiveDevice} icon={deviceIcons[index]}/>);
       // Push to Option Two array
       deviceOptions[1].push(<DeviceOption key={index} index={index} title={info.title} dimensions={info.dimensions} 
-        option={1} activeDevice={activeDevices[1]} setActiveDevice={this.setActiveDevice}/>);
+        option={1} activeDevice={activeDevices[1]} setActiveDevice={this.setActiveDevice} icon={deviceIcons[index]}/>);
     });
 
     return(
