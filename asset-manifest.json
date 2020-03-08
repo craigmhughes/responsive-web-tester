@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/responsive-web-tester/static/css/main.e4a9ca4d.chunk.css",
-    "main.js": "/responsive-web-tester/static/js/main.0fc12771.chunk.js",
-    "main.js.map": "/responsive-web-tester/static/js/main.0fc12771.chunk.js.map",
+    "main.css": "/responsive-web-tester/static/css/main.089bbe68.chunk.css",
+    "main.js": "/responsive-web-tester/static/js/main.8e253f39.chunk.js",
+    "main.js.map": "/responsive-web-tester/static/js/main.8e253f39.chunk.js.map",
     "runtime-main.js": "/responsive-web-tester/static/js/runtime-main.19040dd8.js",
     "runtime-main.js.map": "/responsive-web-tester/static/js/runtime-main.19040dd8.js.map",
-    "static/js/2.f0af7f95.chunk.js": "/responsive-web-tester/static/js/2.f0af7f95.chunk.js",
-    "static/js/2.f0af7f95.chunk.js.map": "/responsive-web-tester/static/js/2.f0af7f95.chunk.js.map",
+    "static/js/2.528e8635.chunk.js": "/responsive-web-tester/static/js/2.528e8635.chunk.js",
+    "static/js/2.528e8635.chunk.js.map": "/responsive-web-tester/static/js/2.528e8635.chunk.js.map",
     "index.html": "/responsive-web-tester/index.html",
-    "precache-manifest.cfeb2fba1aaaafc14298547a884b3961.js": "/responsive-web-tester/precache-manifest.cfeb2fba1aaaafc14298547a884b3961.js",
+    "precache-manifest.5a691719df855cd7f0244598a4a9c851.js": "/responsive-web-tester/precache-manifest.5a691719df855cd7f0244598a4a9c851.js",
     "service-worker.js": "/responsive-web-tester/service-worker.js",
-    "static/css/main.e4a9ca4d.chunk.css.map": "/responsive-web-tester/static/css/main.e4a9ca4d.chunk.css.map",
-    "static/js/2.f0af7f95.chunk.js.LICENSE.txt": "/responsive-web-tester/static/js/2.f0af7f95.chunk.js.LICENSE.txt",
-    "static/media/monitor.svg": "/responsive-web-tester/static/media/monitor.0f1222c0.svg",
-    "static/media/react-brands.svg": "/responsive-web-tester/static/media/react-brands.b0d49312.svg",
-    "static/media/search.svg": "/responsive-web-tester/static/media/search.5437e521.svg",
-    "static/media/smartphone.svg": "/responsive-web-tester/static/media/smartphone.2b990350.svg",
-    "static/media/tablet.svg": "/responsive-web-tester/static/media/tablet.3b74c4e6.svg"
+    "static/css/main.089bbe68.chunk.css.map": "/responsive-web-tester/static/css/main.089bbe68.chunk.css.map",
+    "static/js/2.528e8635.chunk.js.LICENSE.txt": "/responsive-web-tester/static/js/2.528e8635.chunk.js.LICENSE.txt",
+    "static/media/Desktop.svg": "/responsive-web-tester/static/media/Desktop.a690c9f1.svg",
+    "static/media/Laptop.svg": "/responsive-web-tester/static/media/Laptop.922aa28c.svg",
+    "static/media/Large Mobile.svg": "/responsive-web-tester/static/media/Large Mobile.54dfc7ae.svg",
+    "static/media/Small Mobile.svg": "/responsive-web-tester/static/media/Small Mobile.9fa6b859.svg",
+    "static/media/Splash Vector (Underlay).svg": "/responsive-web-tester/static/media/Splash Vector (Underlay).32cd7673.svg",
+    "static/media/Splash Vector.svg": "/responsive-web-tester/static/media/Splash Vector.6cfd3d76.svg",
+    "static/media/Tablet.svg": "/responsive-web-tester/static/media/Tablet.d1069b28.svg",
+    "static/media/search.svg": "/responsive-web-tester/static/media/search.5437e521.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.19040dd8.js",
-    "static/js/2.f0af7f95.chunk.js",
-    "static/css/main.e4a9ca4d.chunk.css",
-    "static/js/main.0fc12771.chunk.js"
+    "static/js/2.528e8635.chunk.js",
+    "static/css/main.089bbe68.chunk.css",
+    "static/js/main.8e253f39.chunk.js"
   ]
 }
