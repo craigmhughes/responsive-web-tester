@@ -37,7 +37,7 @@ class App extends React.Component {
     }
 
     this.setState({
-      url: `http://${url}`
+      url: `https://${url}`
     });
 
     return "device-select";
@@ -60,7 +60,7 @@ class App extends React.Component {
    */
   render(){
     return (
-      <Router className="App">
+      <Router className="App" basename={`${process.env.PUBLIC_URL}/`}>
         <AnimatePresence exitBeforeEnter>
           <Switch location={this.props.history} key={this.props.history}>
             <Route exact path='/' render={(props)=><Home history={props.history}/>} />
