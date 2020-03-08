@@ -51,7 +51,7 @@ class Home extends React.Component {
                 </section>
                 <section className="footer">
                     <button className="primary-btn btn" onClick={()=>{this.props.history.push("search")}}>Get Started</button>
-                    <button className="secondary-btn btn credit">Project by <span>Craig Hughes</span></button>
+                    <button className="secondary-btn btn credit" onClick={()=>{window.location.href = "https://github.com/craigmhughes"}}>Project by <span>Craig Hughes</span></button>
                 </section>
             </motion.main>
         );
