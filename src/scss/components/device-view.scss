@@ -19,13 +19,55 @@
     }
 
     & > section.body {
+        max-width: inherit;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
 
         & > section {
+            max-width: 650px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            
+            &:first-child {
+                justify-content: flex-end;
+                padding-right: 2em;
+            }
+
+            &:last-child {
+                justify-content: flex-start;
+                padding-left: 2em;
+            }
+
+            & > div {
+                // max-width: 325px;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+
+                transform: scale(1.25);
+
+                & > img, & > iframe {
+                    grid-row-start: 1;
+                    grid-column-start: 1;
+                    grid-row-end: 2;
+                    grid-column-end: 2;
+
+                    margin: 0 auto 0 0;
+                }
+
+                & > iframe {
+                    transform: scale(0.375);
+                    margin-top: -10.4em;
+                    margin-left: -3.15em;
+                    position: absolute;
+                    border: none;
+                }
+
+                & > img {
+                    z-index: 10;
+                    pointer-events: none;
+                }
+            }
         }
     }
 

@@ -21,6 +21,13 @@ class DeviceSelect extends React.Component {
     this.setActiveDevice = this.setActiveDevice.bind(this);
   }
 
+  componentDidMount(){
+    if(this.props.url == null){
+      this.props.history.push("/search");
+      return false;
+  }
+  }
+
   setActiveDevice(option, index){
     this.setState({
       activeDevices: option > 0 ? [ this.state.activeDevices[0], [option, index] ] :

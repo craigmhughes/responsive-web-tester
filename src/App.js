@@ -40,7 +40,7 @@ class App extends React.Component {
     }
 
     this.setState({
-      url: url
+      url: `http://${url}`
     });
 
     return "device-select";
@@ -69,8 +69,8 @@ class App extends React.Component {
           <Switch location={this.props.history} key={this.props.history}>
             <Route exact path='/' render={(props)=><Home history={props.history}/>} />
             <Route exact path='/search' render={(props)=><Search useUrl={this.useUrl} history={props.history}/>} />
-            <Route exact path='/device-select' render={(props)=><DeviceSelect history={props.history} setDevices={this.setDevices}/>} />
-            <Route exact path='/view' render={(props)=><View history={props.history} selectedDevices={this.state.selectedDevices}/>} />
+            <Route exact path='/device-select' render={(props)=><DeviceSelect history={props.history} url={this.state.url} setDevices={this.setDevices}/>} />
+            <Route exact path='/view' render={(props)=><View history={props.history} selectedDevices={this.state.selectedDevices} url={this.state.url}/>} />
           </Switch>
         </AnimatePresence>
       </Router>
